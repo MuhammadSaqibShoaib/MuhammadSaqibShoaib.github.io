@@ -11,98 +11,7 @@
       href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
       rel="stylesheet"
     />
-    <style>
-      body {
-        font-family: "Inter", sans-serif;
-        background-color: #07070a;
-        background-image:
-          radial-gradient(
-            circle at top left,
-            rgba(96, 165, 250, 0.18),
-            transparent 28%
-          ),
-          radial-gradient(
-            circle at bottom right,
-            rgba(94, 234, 212, 0.14),
-            transparent 26%
-          );
-      }
-      .card-glow:hover {
-        border-color: #3f3f46;
-        box-shadow: 0 0 20px rgba(255, 255, 255, 0.08);
-      }
-      .project-card {
-        display: block;
-        text-decoration: none;
-      }
-      .project-card:hover .project-card-title {
-        color: #f8fafc;
-      }
-      .project-card:hover .project-card-description {
-        color: #d4d4d8;
-      }
-      .project-card:hover {
-        transform: translateY(-2px);
-      }
-      .project-card {
-        transition:
-          transform 150ms ease,
-          color 150ms ease;
-      }
-      .hero-canvas {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100vh;
-        pointer-events: none;
-        z-index: 0;
-        opacity: 0.35;
-      }
-      .hero-content {
-        position: relative;
-        z-index: 10;
-      }
-      body::before {
-        content: "";
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: radial-gradient(
-          circle at center,
-          rgba(10, 10, 10, 0) 0%,
-          rgba(10, 10, 10, 0.12) 100%
-        );
-        pointer-events: none;
-        z-index: 1;
-      }
-      .max-w-4xl {
-        position: relative;
-        z-index: 10;
-      }
-      .project-image {
-        width: calc(-100% - 12px);
-        margin: calc(-6px) calc(-6px) 16px calc(-6px);
-        height: 160px;
-        border-radius: 6px 6px 0 0;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 3rem;
-        color: rgba(255, 255, 255, 0.15);
-        overflow: hidden;
-        position: relative;
-      }
-      .project-image::before {
-        content: "";
-        position: absolute;
-        inset: 0;
-        background: inherit;
-        opacity: 0.8;
-      }
-    </style>
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body
     class="text-zinc-300 antialiased selection:bg-zinc-800 selection:text-white"
@@ -132,7 +41,7 @@
             >Contact</a
           >
           <a
-            href="#"
+            href="https://muhammadsaqibshoaib.github.io/Muhammad%20Saqib%20Unity%20Resume.pdf"
             target="_blank"
             rel="noreferrer noopener"
             class="px-4 py-2 text-sm font-medium border border-zinc-800 text-zinc-300 rounded hover:border-zinc-700 hover:text-white transition-colors"
@@ -175,55 +84,6 @@
           </div>
         </div>
       </header>
-
-      <section class="space-y-8">
-        <h2
-          class="text-xs font-semibold uppercase tracking-widest text-zinc-500"
-        >
-          Core Engineering Impacts
-        </h2>
-        <div class="border border-zinc-900 bg-[#111111] rounded-lg p-6 md:p-8">
-          <ul class="space-y-4 text-zinc-300">
-            <li class="flex items-start gap-3">
-              <span class="text-zinc-600 font-mono mt-0.5">01 //</span>
-              <span
-                >Built custom multiplayer architecture and real-time on-chain
-                data synchronization for blockchain-based gaming.</span
-              >
-            </li>
-            <li class="flex items-start gap-3">
-              <span class="text-zinc-600 font-mono mt-0.5">02 //</span>
-              <span
-                >Built real-time voice-enabled collaboration systems with Agora
-                and Photon Fusion for interactive Unity workflows.</span
-              >
-            </li>
-            <li class="flex items-start gap-3">
-              <span class="text-zinc-600 font-mono mt-0.5">03 //</span>
-              <span
-                >Designed and implemented robust tournament systems, Xsolla
-                payment configurations, and multi-provider auth pipelines.</span
-              >
-            </li>
-            <li class="flex items-start gap-3">
-              <span class="text-zinc-600 font-mono mt-0.5">04 //</span>
-              <span
-                >Engineered seamless communication bridges between Unity and
-                native Android environments alongside Firebase Cloud
-                Functions.</span
-              >
-            </li>
-            <li class="flex items-start gap-3">
-              <span class="text-zinc-600 font-mono mt-0.5">05 //</span>
-              <span
-                >Successfully deployed complex architectural projects across VR
-                (Meta Quest), AR, Mobile, and heavily optimized WebGL
-                builds.</span
-              >
-            </li>
-          </ul>
-        </div>
-      </section>
 
       <section class="space-y-8">
         <h2
@@ -373,6 +233,110 @@
           </a>
         </div>
       </section>
+
+      <!-- Logo carousel -->
+      <div class="logo-carousel max-w-4xl mx-auto">
+        <div class="logo-track" aria-hidden="false">
+          <div class="logo-item">
+            <img src="unity.svg" alt="Unity" class="logo-img" />
+            <div class="logo-label">Unity</div>
+          </div>
+          <div class="logo-item">
+            <img src="node.svg" alt="Node.js" class="logo-img" />
+            <div class="logo-label">Node.js</div>
+          </div>
+          <div class="logo-item">
+            <img src="photon.svg" alt="Photon" class="logo-img" />
+            <div class="logo-label">Photon</div>
+          </div>
+          <div class="logo-item">
+            <img src="firebase.svg" alt="Firebase" class="logo-img" />
+            <div class="logo-label">Firebase</div>
+          </div>
+          <div class="logo-item">
+            <img src="meta.svg" alt="Meta Quest" class="logo-img" />
+            <div class="logo-label">Meta Quest</div>
+          </div>
+          <div class="logo-item">
+            <img src="aws.svg" alt="AWS" class="logo-img" />
+            <div class="logo-label">AWS</div>
+          </div>
+          <!-- duplicate for seamless loop -->
+          <div class="logo-item">
+            <img src="unity.svg" alt="Unity" class="logo-img" />
+            <div class="logo-label">Unity</div>
+          </div>
+          <div class="logo-item">
+            <img src="node.svg" alt="Node.js" class="logo-img" />
+            <div class="logo-label">Node.js</div>
+          </div>
+          <div class="logo-item">
+            <img src="photon.svg" alt="Photon Fusion" class="logo-img" />
+            <div class="logo-label">Photon Fusion</div>
+          </div>
+          <div class="logo-item">
+            <img src="firebase.svg" alt="Firebase" class="logo-img" />
+            <div class="logo-label">Firebase</div>
+          </div>
+          <div class="logo-item">
+            <img src="meta.svg" alt="Meta Quest" class="logo-img" />
+            <div class="logo-label">Meta Quest</div>
+          </div>
+          <div class="logo-item">
+            <img src="aws.svg" alt="AWS" class="logo-img" />
+            <div class="logo-label">AWS</div>
+          </div>
+        </div>
+      </div>
+      <section class="space-y-8">
+        <h2
+          class="text-xs font-semibold uppercase tracking-widest text-zinc-500"
+        >
+          Core Engineering Impacts
+        </h2>
+        <div class="border border-zinc-900 bg-[#111111] rounded-lg p-6 md:p-8">
+          <ul class="space-y-4 text-zinc-300">
+            <li class="flex items-start gap-3">
+              <span class="text-zinc-600 font-mono mt-0.5">01 //</span>
+              <span
+                >Built custom multiplayer architecture and real-time on-chain
+                data synchronization for blockchain-based gaming.</span
+              >
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="text-zinc-600 font-mono mt-0.5">02 //</span>
+              <span
+                >Built real-time voice-enabled collaboration systems with Agora
+                and Photon Fusion for interactive Unity workflows.</span
+              >
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="text-zinc-600 font-mono mt-0.5">03 //</span>
+              <span
+                >Designed and implemented robust tournament systems, Xsolla
+                payment configurations, and multi-provider auth pipelines.</span
+              >
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="text-zinc-600 font-mono mt-0.5">04 //</span>
+              <span
+                >Engineered seamless communication bridges between Unity and
+                native Android environments alongside Firebase Cloud
+                Functions.</span
+              >
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="text-zinc-600 font-mono mt-0.5">05 //</span>
+              <span
+                >Successfully deployed complex architectural projects across VR
+                (Meta Quest), AR, Mobile, and heavily optimized WebGL
+                builds.</span
+              >
+            </li>
+          </ul>
+        </div>
+      </section>
+
       <section class="space-y-8">
         <h2
           class="text-xs font-semibold uppercase tracking-widest text-zinc-500"
@@ -617,113 +581,6 @@
         </div>
       </footer>
     </div>
-    <script>
-      const canvas = document.getElementById("particleCanvas");
-      const ctx = canvas.getContext("2d");
-
-      let dpr = window.devicePixelRatio || 1;
-      let width = window.innerWidth;
-      let height = window.innerHeight;
-
-      function resizeCanvas() {
-        dpr = window.devicePixelRatio || 1;
-        width = window.innerWidth;
-        height = window.innerHeight;
-        canvas.style.width = width + "px";
-        canvas.style.height = height + "px";
-        canvas.width = Math.round(width * dpr);
-        canvas.height = Math.round(height * dpr);
-        ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-
-        // keep particles inside the new bounds
-        particles.forEach((p) => {
-          if (p.x > width) p.x = Math.random() * width;
-          if (p.y > height) p.y = Math.random() * height;
-        });
-      }
-
-      const particles = [];
-      const particleCount = 60;
-      const connectionDistance = 180;
-
-      class Particle {
-        constructor() {
-          this.x = Math.random() * width;
-          this.y = Math.random() * height;
-          this.vx = (Math.random() - 0.5) * 0.6;
-          this.vy = (Math.random() - 0.5) * 0.6;
-          this.radius = Math.random() * 1.8 + 0.6;
-          this.opacity = Math.random() * 0.45 + 0.45;
-        }
-
-        update() {
-          this.x += this.vx;
-          this.y += this.vy;
-
-          if (this.x < 0 || this.x > width) this.vx *= -1;
-          if (this.y < 0 || this.y > height) this.vy *= -1;
-
-          this.x = Math.max(0, Math.min(width, this.x));
-          this.y = Math.max(0, Math.min(height, this.y));
-        }
-
-        draw() {
-          ctx.fillStyle = `rgba(96, 165, 250, ${this.opacity})`;
-          ctx.beginPath();
-          ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
-          ctx.fill();
-        }
-      }
-
-      function initParticles() {
-        particles.length = 0;
-        for (let i = 0; i < particleCount; i++) {
-          particles.push(new Particle());
-        }
-      }
-
-      function drawConnections() {
-        for (let i = 0; i < particles.length; i++) {
-          for (let j = i + 1; j < particles.length; j++) {
-            const dx = particles[i].x - particles[j].x;
-            const dy = particles[i].y - particles[j].y;
-            const distance = Math.sqrt(dx * dx + dy * dy);
-
-            if (distance < connectionDistance) {
-              const opacity = (1 - distance / connectionDistance) * 0.45;
-              ctx.strokeStyle = `rgba(94, 234, 212, ${opacity})`;
-              ctx.lineWidth = 0.6;
-              ctx.beginPath();
-              ctx.moveTo(particles[i].x, particles[i].y);
-              ctx.lineTo(particles[j].x, particles[j].y);
-              ctx.stroke();
-            }
-          }
-        }
-      }
-
-      function animate() {
-        ctx.clearRect(0, 0, width, height);
-        ctx.fillStyle = "rgba(10, 10, 10, 0.04)";
-        ctx.fillRect(0, 0, width, height);
-
-        particles.forEach((particle) => {
-          particle.update();
-          particle.draw();
-        });
-
-        drawConnections();
-        requestAnimationFrame(animate);
-      }
-
-      window.addEventListener("resize", () => {
-        resizeCanvas();
-      });
-
-      // Initialize
-      resizeCanvas();
-      initParticles();
-      animate();
-    </script>
+    <script src="script.js"></script>
   </body>
 </html>
