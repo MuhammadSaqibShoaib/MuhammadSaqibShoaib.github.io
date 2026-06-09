@@ -14,19 +14,102 @@
     <style>
       body {
         font-family: "Inter", sans-serif;
-        background-color: #0a0a0a;
+        background-color: #07070a;
+        background-image:
+          radial-gradient(
+            circle at top left,
+            rgba(96, 165, 250, 0.18),
+            transparent 28%
+          ),
+          radial-gradient(
+            circle at bottom right,
+            rgba(94, 234, 212, 0.14),
+            transparent 26%
+          );
       }
       .card-glow:hover {
         border-color: #3f3f46;
-        box-shadow: 0 0 20px rgba(255, 255, 255, 0.02);
+        box-shadow: 0 0 20px rgba(255, 255, 255, 0.08);
+      }
+      .project-card {
+        display: block;
+        text-decoration: none;
+      }
+      .project-card:hover .project-card-title {
+        color: #f8fafc;
+      }
+      .project-card:hover .project-card-description {
+        color: #d4d4d8;
+      }
+      .project-card:hover {
+        transform: translateY(-2px);
+      }
+      .project-card {
+        transition:
+          transform 150ms ease,
+          color 150ms ease;
+      }
+      .hero-canvas {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        pointer-events: none;
+        z-index: 0;
+        opacity: 0.35;
+      }
+      .hero-content {
+        position: relative;
+        z-index: 10;
+      }
+      body::before {
+        content: "";
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: radial-gradient(
+          circle at center,
+          rgba(10, 10, 10, 0) 0%,
+          rgba(10, 10, 10, 0.12) 100%
+        );
+        pointer-events: none;
+        z-index: 1;
+      }
+      .max-w-4xl {
+        position: relative;
+        z-index: 10;
+      }
+      .project-image {
+        width: calc(-100% - 12px);
+        margin: calc(-6px) calc(-6px) 16px calc(-6px);
+        height: 160px;
+        border-radius: 6px 6px 0 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 3rem;
+        color: rgba(255, 255, 255, 0.15);
+        overflow: hidden;
+        position: relative;
+      }
+      .project-image::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: inherit;
+        opacity: 0.8;
       }
     </style>
   </head>
   <body
     class="text-zinc-300 antialiased selection:bg-zinc-800 selection:text-white"
   >
+    <canvas id="particleCanvas" class="hero-canvas"></canvas>
     <div class="max-w-4xl mx-auto px-6 py-20 space-y-32">
-      <header class="space-y-8 animate-fade-in">
+      <header class="space-y-8 animate-fade-in hero-content">
         <div class="space-y-3">
           <h1 class="text-4xl font-bold tracking-tight text-white sm:text-5xl">
             Muhammad Saqib
@@ -146,6 +229,154 @@
         <h2
           class="text-xs font-semibold uppercase tracking-widest text-zinc-500"
         >
+          Featured Engineering Work
+        </h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <a
+            href="https://example.com/video-sacred-tails"
+            target="_blank"
+            rel="noreferrer noopener"
+            class="project-card space-y-3 p-0 border border-zinc-900 rounded bg-[#0d0d0d] overflow-hidden flex flex-col"
+            aria-label="Watch Sacred Tails portfolio video"
+          >
+            <div
+              class="h-40 bg-gradient-to-br from-blue-900 via-purple-900 to-indigo-900 flex items-center justify-center"
+            >
+              <span class="text-5xl opacity-30">⛓️</span>
+            </div>
+            <div class="p-6 space-y-3">
+              <div class="flex justify-between items-start">
+                <h3 class="project-card-title text-lg font-medium text-white">
+                  Sacred Tails
+                </h3>
+                <span class="text-xs text-zinc-500 font-mono"
+                  >Software Engineer</span
+                >
+              </div>
+              <p
+                class="project-card-description text-sm text-zinc-400 leading-relaxed"
+              >
+                Engineered custom multiplayer architecture alongside robust Web3
+                SDK systems. Orchestrated real-time on-chain data
+                synchronization protocols and developed a desktop game launcher
+                utility.
+              </p>
+              <p class="text-xs font-mono text-zinc-500 pt-2">
+                Stack: Unity, Web3SDK, JavaScript, Multiplayer
+              </p>
+            </div>
+          </a>
+
+          <a
+            href="https://example.com/video-workspace"
+            target="_blank"
+            rel="noreferrer noopener"
+            class="project-card space-y-3 p-0 border border-zinc-900 rounded bg-[#0d0d0d] overflow-hidden flex flex-col"
+            aria-label="Watch Workspace portfolio video"
+          >
+            <div
+              class="h-40 bg-gradient-to-br from-cyan-900 via-teal-900 to-cyan-800 flex items-center justify-center"
+            >
+              <span class="text-5xl opacity-30">🎮</span>
+            </div>
+            <div class="p-6 space-y-3">
+              <div class="flex justify-between items-start">
+                <h3 class="project-card-title text-lg font-medium text-white">
+                  Workspace
+                </h3>
+                <span class="text-xs text-zinc-500 font-mono"
+                  >Associate SE</span
+                >
+              </div>
+              <p
+                class="project-card-description text-sm text-zinc-400 leading-relaxed"
+              >
+                Developed a real-time collaborative workspace interface within
+                Unity. Successfully integrated Agora high-fidelity voice
+                channels, Slack communication pathways, and a highly optimized
+                WebGL deployment pipeline.
+              </p>
+              <p class="text-xs font-mono text-zinc-500 pt-2">
+                Stack: Unity, Agora, Photon Fusion, Node.js
+              </p>
+            </div>
+          </a>
+
+          <a
+            href="https://example.com/video-metaplex"
+            target="_blank"
+            rel="noreferrer noopener"
+            class="project-card space-y-3 p-0 border border-zinc-900 rounded bg-[#0d0d0d] overflow-hidden flex flex-col"
+            aria-label="Watch Metaplex portfolio video"
+          >
+            <div
+              class="h-40 bg-gradient-to-br from-purple-900 via-pink-900 to-rose-900 flex items-center justify-center"
+            >
+              <span class="text-5xl opacity-30">🥽</span>
+            </div>
+            <div class="p-6 space-y-3">
+              <div class="flex justify-between items-start">
+                <h3 class="project-card-title text-lg font-medium text-white">
+                  Metaplex
+                </h3>
+                <span class="text-xs text-zinc-500 font-mono"
+                  >Associate SE</span
+                >
+              </div>
+              <p
+                class="project-card-description text-sm text-zinc-400 leading-relaxed"
+              >
+                Created cross-platform AR/VR experimental solutions utilizing
+                modern spatial interactions. Implemented networked mechanics via
+                Photon Fusion and managed player progression states via PlayFab
+                infrastructure.
+              </p>
+              <p class="text-xs font-mono text-zinc-500 pt-2">
+                Stack: Unity, AR/VR, Fusion, PlayFab
+              </p>
+            </div>
+          </a>
+
+          <a
+            href="https://example.com/video-wondr"
+            target="_blank"
+            rel="noreferrer noopener"
+            class="project-card space-y-3 p-0 border border-zinc-900 rounded bg-[#0d0d0d] overflow-hidden flex flex-col"
+            aria-label="Watch Wondr portfolio video"
+          >
+            <div
+              class="h-40 bg-gradient-to-br from-emerald-900 via-green-900 to-teal-900 flex items-center justify-center"
+            >
+              <span class="text-5xl opacity-30">🔐</span>
+            </div>
+            <div class="p-6 space-y-3">
+              <div class="flex justify-between items-start">
+                <h3 class="project-card-title text-lg font-medium text-white">
+                  Wondr
+                </h3>
+                <span class="text-xs text-zinc-500 font-mono"
+                  >Senior Software Engineer</span
+                >
+              </div>
+              <p
+                class="project-card-description text-sm text-zinc-400 leading-relaxed"
+              >
+                Designed and deployed robust Google & Apple social
+                authentication mechanics. Constructed custom backend wrappers
+                via Firebase Cloud Functions and native Android-to-Unity JNI
+                interaction bridges.
+              </p>
+              <p class="text-xs font-mono text-zinc-500 pt-2">
+                Stack: Unity, Firebase, Android Native JNI
+              </p>
+            </div>
+          </a>
+        </div>
+      </section>
+      <section class="space-y-8">
+        <h2
+          class="text-xs font-semibold uppercase tracking-widest text-zinc-500"
+        >
           Capabilities & Core Areas
         </h2>
         <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -251,89 +482,6 @@
                 >Web3 / On-chain Data</span
               >
             </div>
-          </div>
-        </div>
-      </section>
-
-      <section class="space-y-8">
-        <h2
-          class="text-xs font-semibold uppercase tracking-widest text-zinc-500"
-        >
-          Featured Engineering Work
-        </h2>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <div
-            class="space-y-3 p-6 border border-zinc-900 rounded bg-[#0d0d0d]"
-          >
-            <div class="flex justify-between items-start">
-              <h3 class="text-lg font-medium text-white">Sacred Tails</h3>
-              <span class="text-xs text-zinc-500 font-mono"
-                >Software Engineer</span
-              >
-            </div>
-            <p class="text-sm text-zinc-400 leading-relaxed">
-              Engineered custom multiplayer architecture alongside robust Web3
-              SDK systems. Orchestrated real-time on-chain data synchronization
-              protocols and developed a desktop game launcher utility.
-            </p>
-            <p class="text-xs font-mono text-zinc-500 pt-2">
-              Stack: Unity, Web3SDK, JavaScript, Multiplayer
-            </p>
-          </div>
-
-          <div
-            class="space-y-3 p-6 border border-zinc-900 rounded bg-[#0d0d0d]"
-          >
-            <div class="flex justify-between items-start">
-              <h3 class="text-lg font-medium text-white">Workspace</h3>
-              <span class="text-xs text-zinc-500 font-mono">Associate SE</span>
-            </div>
-            <p class="text-sm text-zinc-400 leading-relaxed">
-              Developed a real-time collaborative workspace interface within
-              Unity. Successfully integrated Agora high-fidelity voice channels,
-              Slack communication pathways, and a highly optimized WebGL
-              deployment pipeline.
-            </p>
-            <p class="text-xs font-mono text-zinc-500 pt-2">
-              Stack: Unity, Agora, Photon Fusion, Node.js
-            </p>
-          </div>
-
-          <div
-            class="space-y-3 p-6 border border-zinc-900 rounded bg-[#0d0d0d]"
-          >
-            <div class="flex justify-between items-start">
-              <h3 class="text-lg font-medium text-white">Metaplex</h3>
-              <span class="text-xs text-zinc-500 font-mono">Associate SE</span>
-            </div>
-            <p class="text-sm text-zinc-400 leading-relaxed">
-              Created cross-platform AR/VR experimental solutions utilizing
-              modern spatial interactions. Implemented networked mechanics via
-              Photon Fusion and managed player progression states via PlayFab
-              infrastructure.
-            </p>
-            <p class="text-xs font-mono text-zinc-500 pt-2">
-              Stack: Unity, AR/VR, Fusion, PlayFab
-            </p>
-          </div>
-
-          <div
-            class="space-y-3 p-6 border border-zinc-900 rounded bg-[#0d0d0d]"
-          >
-            <div class="flex justify-between items-start">
-              <h3 class="text-lg font-medium text-white">Wondr</h3>
-              <span class="text-xs text-zinc-500 font-mono"
-                >Senior Software Engineer</span
-              >
-            </div>
-            <p class="text-sm text-zinc-400 leading-relaxed">
-              Designed and deployed robust Google & Apple social authentication
-              mechanics. Constructed custom backend wrappers via Firebase Cloud
-              Functions and native Android-to-Unity JNI interaction bridges.
-            </p>
-            <p class="text-xs font-mono text-zinc-500 pt-2">
-              Stack: Unity, Firebase, Android Native JNI
-            </p>
           </div>
         </div>
       </section>
@@ -469,5 +617,113 @@
         </div>
       </footer>
     </div>
+    <script>
+      const canvas = document.getElementById("particleCanvas");
+      const ctx = canvas.getContext("2d");
+
+      let dpr = window.devicePixelRatio || 1;
+      let width = window.innerWidth;
+      let height = window.innerHeight;
+
+      function resizeCanvas() {
+        dpr = window.devicePixelRatio || 1;
+        width = window.innerWidth;
+        height = window.innerHeight;
+        canvas.style.width = width + "px";
+        canvas.style.height = height + "px";
+        canvas.width = Math.round(width * dpr);
+        canvas.height = Math.round(height * dpr);
+        ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+
+        // keep particles inside the new bounds
+        particles.forEach((p) => {
+          if (p.x > width) p.x = Math.random() * width;
+          if (p.y > height) p.y = Math.random() * height;
+        });
+      }
+
+      const particles = [];
+      const particleCount = 60;
+      const connectionDistance = 180;
+
+      class Particle {
+        constructor() {
+          this.x = Math.random() * width;
+          this.y = Math.random() * height;
+          this.vx = (Math.random() - 0.5) * 0.6;
+          this.vy = (Math.random() - 0.5) * 0.6;
+          this.radius = Math.random() * 1.8 + 0.6;
+          this.opacity = Math.random() * 0.45 + 0.45;
+        }
+
+        update() {
+          this.x += this.vx;
+          this.y += this.vy;
+
+          if (this.x < 0 || this.x > width) this.vx *= -1;
+          if (this.y < 0 || this.y > height) this.vy *= -1;
+
+          this.x = Math.max(0, Math.min(width, this.x));
+          this.y = Math.max(0, Math.min(height, this.y));
+        }
+
+        draw() {
+          ctx.fillStyle = `rgba(96, 165, 250, ${this.opacity})`;
+          ctx.beginPath();
+          ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+          ctx.fill();
+        }
+      }
+
+      function initParticles() {
+        particles.length = 0;
+        for (let i = 0; i < particleCount; i++) {
+          particles.push(new Particle());
+        }
+      }
+
+      function drawConnections() {
+        for (let i = 0; i < particles.length; i++) {
+          for (let j = i + 1; j < particles.length; j++) {
+            const dx = particles[i].x - particles[j].x;
+            const dy = particles[i].y - particles[j].y;
+            const distance = Math.sqrt(dx * dx + dy * dy);
+
+            if (distance < connectionDistance) {
+              const opacity = (1 - distance / connectionDistance) * 0.45;
+              ctx.strokeStyle = `rgba(94, 234, 212, ${opacity})`;
+              ctx.lineWidth = 0.6;
+              ctx.beginPath();
+              ctx.moveTo(particles[i].x, particles[i].y);
+              ctx.lineTo(particles[j].x, particles[j].y);
+              ctx.stroke();
+            }
+          }
+        }
+      }
+
+      function animate() {
+        ctx.clearRect(0, 0, width, height);
+        ctx.fillStyle = "rgba(10, 10, 10, 0.04)";
+        ctx.fillRect(0, 0, width, height);
+
+        particles.forEach((particle) => {
+          particle.update();
+          particle.draw();
+        });
+
+        drawConnections();
+        requestAnimationFrame(animate);
+      }
+
+      window.addEventListener("resize", () => {
+        resizeCanvas();
+      });
+
+      // Initialize
+      resizeCanvas();
+      initParticles();
+      animate();
+    </script>
   </body>
 </html>
