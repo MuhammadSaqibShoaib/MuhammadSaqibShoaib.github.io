@@ -9,7 +9,7 @@
   const scrollSpeed = 0.4; // pixels per frame
   let isPaused = false;
 
-  // Calculate the width of one complete set (6 items)
+  // Calculate the width of one complete set (dynamic based on actual items)
   const logoItems = logoTrack.querySelectorAll(".logo-item");
   let itemWidth = 0;
   let totalGap = 0;
@@ -20,8 +20,10 @@
       itemWidth = logoItems[0].offsetWidth;
       // Gap between items
       const gap = 24;
-      // Total width of half the track (6 items + gaps)
-      const halfSetWidth = (itemWidth * 6) + (gap * 5); // 5 gaps for 6 items
+      // Calculate original set count (total items / 2, since we duplicate for seamless loop)
+      const originalSetCount = logoItems.length / 2;
+      // Total width of the original set before duplication
+      const halfSetWidth = (itemWidth * originalSetCount) + (gap * (originalSetCount - 1));
       return halfSetWidth;
     }
     return 0;
